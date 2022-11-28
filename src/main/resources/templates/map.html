@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오맵</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1c3c61bea35c893ae9c9e4e5fa72ea5c&libraries=services, clusterer, drawing"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/static/images/favicon.png">
+    <link rel="stylesheet" href="/static/css/map.css">
+</head>
+
+<body>
+    <div id="container">
+        <aside>
+            <header>
+                <div class="title">
+                    <h1 class="title-text">
+                        <i class="fa-solid fa-bars"></i>
+                        kakao<span class="map-text">map</span>
+                    </h1>
+                    <div class="check-location">
+                        <input type="checkbox" id="my-location">
+                    <label for="my-location" class="my-location-label">현 지도 내 장소검색</label>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <div class="search">
+                        <input type="text" class="search-input" placeholder="장소, 주소, 버스 검색">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="search-recent invisible-recent">
+                        <div class="title-recent">
+                            히스토리가 없습니다.
+                        </div>
+                        <ul class="list-recent"></ul>
+                        <div class="favorite-recent">
+                            <button type="button" class="button-recentoff">히스토리 끄기</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <ul class="menu">
+                <li><a href="javascript:void(0);" class="mainmenutab tab-selected">검색</a></li>
+                <li><a href="javascript:void(0);" class="mainmenutab">길찾기</a></li>
+                <li><a href="javascript:void(0);" class="mainmenutab">버스</a></li>
+                <li><a href="javascript:void(0);" class="mainmenutab">지하철</a></li>
+                <li><a href="javascript:void(0);" class="mainmenutab">MY</a></li>
+            </ul>
+            <div class="info-body">
+                <div class="search-body">
+                    <div class="report-error">
+
+                    </div>
+                    <div class="info">
+                        
+                        <h3 class="title-around">주변 탐색</h3>
+                        <ul class="list-around">
+                            <li>
+                                <button class="button-around">
+                                    <div class="button-icon"><i class="fa-solid fa-utensils"></i></div>
+                                    <span class="button-title">음식점</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button-around">
+                                    <div class="button-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                                    <span class="button-title">카페</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button-around">
+                                    <div class="button-icon"><i class="fa-solid fa-bus-simple"></i></div>
+                                    <span class="button-title">버스</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button-around">
+                                    <div class="button-icon"><i class="fa-solid fa-train-subway"></i></div>
+                                    <span class="button-title">지하철</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button-around">
+                                <div class="button-icon"><i class="fa-solid fa-bed"></i></div>                                        <span class="button-title">숙박</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button-around">
+                                    <div class="button-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+                                    <span class="button-title">은행</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="button-around">
+                                    <div class="button-icon"><i class="fa-solid fa-shop"></i></div>
+                                    <span class="button-title">편의점</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-body invisible-body">길찾기 화면</div>
+                <div class="search-body invisible-body">버스찾기 화면</div>
+                <div class="search-body invisible-body">지하철찾기 화면</div>
+                <div class="search-body invisible-body">MY 화면</div>
+            </div>
+            <button type="button" class="toggle-button">◀</button>
+        </aside>
+        <div id="map"></div>
+    </div>
+    
+    <script src="/static/js/map.js"></script>
+</body>
+</html>
